@@ -13,6 +13,7 @@ import Listing from "./pages/listing";
 import Category from "./pages/category";
 import Contact from "./pages/contact";
 import Navbar from "./components/navbar/navbar.component";
+import EditListing from "./pages/edit-listing";
 
 function App() {
   const layout = (
@@ -43,6 +44,10 @@ function App() {
         {
           path: "/create-listings",
           element: <CreateListings />,
+        },
+        {
+          path: "/edit-listing/:listingId",
+          element: <EditListing />,
         },
         {
           path: "/category/:categoryName",

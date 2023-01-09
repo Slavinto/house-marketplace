@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { ReactComponent as DeleteIcon } from "../../assets/svg/deleteIcon.svg";
+import { ReactComponent as EditIcon } from "../../assets/svg/editIcon.svg";
 import bedIcon from "../../assets/svg/bedIcon.svg";
 import bathtubIcon from "../../assets/svg/bathtubIcon.svg";
 
-const ListingItem = ({ listing, id, onDelete = () => {} }) => {
+const ListingItem = ({ listing, id, onDelete, onEdit }) => {
   const formatPriceString = (data) => {
     return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
@@ -51,6 +52,9 @@ const ListingItem = ({ listing, id, onDelete = () => {} }) => {
           fill="rgb(231, 76, 60)"
           onClick={() => onDelete(listing.id, listing.name)}
         />
+      )}
+      {onEdit && (
+        <EditIcon className="editIcon" onClick={() => onEdit(listing.id)} />
       )}
     </li>
   );

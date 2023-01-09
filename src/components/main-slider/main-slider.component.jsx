@@ -1,13 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  collection,
-  getDoc,
-  query,
-  orderBy,
-  limit,
-  getDocs,
-} from "firebase/firestore";
+import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
 import { db } from "../../firebase.config";
 import Spinner from "../spinner/spinner.component";
 import { Slide } from "react-slideshow-image";
@@ -41,6 +34,8 @@ const MainSlider = () => {
   }, []);
 
   if (loading) return <Spinner />;
+
+  if (listings.length === 0) return <></>;
 
   return (
     listings && (

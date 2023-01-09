@@ -103,6 +103,10 @@ const Profile = () => {
     }
   };
 
+  const onEdit = async (listingId) => {
+    navigate(`/edit-listing/${listingId}`);
+  };
+
   if (loading) return <Spinner />;
 
   return (
@@ -165,6 +169,7 @@ const Profile = () => {
                     id={listing.id}
                     listing={listing.data}
                     onDelete={() => onDelete(listing.id)}
+                    onEdit={() => onEdit(listing.id)}
                   />
                 ))}
               </ul>
