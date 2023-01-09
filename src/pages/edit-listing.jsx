@@ -16,6 +16,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const EditListing = () => {
   const [listing, setListing] = useState(null);
+  // eslint-disable-next-line
   const [geoEnabled, setGeoEnabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -60,7 +61,7 @@ const EditListing = () => {
       toast.error("You can not edit this listing");
       navigate("/");
     }
-  }, [navigate]);
+  });
 
   //   sets userRef to logged in user
   useEffect(() => {
@@ -76,6 +77,7 @@ const EditListing = () => {
     return () => {
       isMounted.current = false;
     };
+    // eslint-disable-next-line
   }, [isMounted]);
 
   //   fetch listing and fill the form to edit
@@ -151,7 +153,7 @@ const EditListing = () => {
     } else {
       geolocation.lat = latitude;
       geolocation.lng = longitude;
-
+      // eslint-disable-next-line
       location = address;
     }
 

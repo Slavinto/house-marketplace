@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { db } from "../firebase.config";
 import { doc, getDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
-import Spinner from "../components/spinner/spinner.component";
 
 const Contact = () => {
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
   const [landlord, setLandlord] = useState(null);
+  // eslint-disable-next-line
   const [searchParams, setSearchParams] = useSearchParams();
 
   const params = useParams();
@@ -29,7 +29,7 @@ const Contact = () => {
       }
     };
     loading && getLandlord();
-  }, [params.landlordId, loading, landlord]);
+  }, [params.landlordId, loading, landlord, navigate]);
 
   const onChange = (e) => setMessage(e.target.value);
 

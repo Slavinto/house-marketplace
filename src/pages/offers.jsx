@@ -21,8 +21,6 @@ const Offers = () => {
 
   const [lastFetchedListing, setLastFetchedListing] = useState(null);
 
-  const params = useParams();
-
   useEffect(() => {
     const fetchListings = async () => {
       try {

@@ -15,6 +15,7 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
 const CreateListings = () => {
+  // eslint-disable-next-line
   const [geoEnabled, setGeoEnabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -65,6 +66,7 @@ const CreateListings = () => {
     return () => {
       isMounted.current = false;
     };
+    // eslint-disable-next-line
   }, [isMounted]);
 
   const onSubmit = async (e) => {
