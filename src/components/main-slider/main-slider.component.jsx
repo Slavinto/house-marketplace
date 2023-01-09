@@ -27,6 +27,7 @@ const MainSlider = () => {
       });
       console.log(listings);
       setListings(listings);
+
       setLoading(false);
     };
 
@@ -49,7 +50,11 @@ const MainSlider = () => {
                 key={id}
                 onClick={() => navigate(`/category/${data.type}/${id}`)}
               >
-                <img className="swiperSlideImg" src={`${data.imageUrls}`} />
+                <img
+                  className="swiperSlideImg"
+                  src={`${data.imageUrls}`}
+                  alt="swiper slide"
+                />
                 <p className="swiperSlideText">{data.name}</p>
                 <p
                   className={
