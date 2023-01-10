@@ -122,7 +122,7 @@ const CreateListings = () => {
     } else {
       geolocation.lat = latitude;
       geolocation.lng = longitude;
-
+      // eslint-disable-next-line
       location = address;
     }
 

@@ -13,7 +13,7 @@ const Slider = ({ images }) => {
       <Slide>
         {slideImages.map((slideImage, index) => (
           <div className="each-slide" key={index}>
-            <img className="swiperSlideImg" src={`${slideImage.url}`} />
+            <img className="swiperSlideImg" src={`${slideImage.url}`} alt="" />
           </div>
         ))}
       </Slide>
